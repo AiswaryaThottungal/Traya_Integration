@@ -1,0 +1,364 @@
+{
+    "products": [
+    {
+        "id": "aayna01",
+        "name":"Aayna Purple Cotton Dress",
+        "description": "Mirror-Embroidered Handloom Cotton Dress ",
+        "collection":"Aayna",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1450, 
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],     
+        "images":[
+            {
+                "id":"aayna-pl1",
+                "src":"../images/ProductImages/mirrorpurple1.jpg"
+            },
+            {
+                "id":"aayna-pl2",
+                "src":"../images/ProductImages/mirrorpurple2.jpg"
+            },
+            {
+                "id":"aayna-pl3",
+                "src":"../images/ProductImages/mirrorpurple31.jpg"
+            }
+        ],  
+        "featured":true,
+        "stock":4
+   },
+   {
+        "id": "mandaram01",
+        "name":"Mandaram Cotton Kasavu dress",
+        "description": "Tiered handloom cotton Kasavu Dress With Headband",
+        "collection":"Mandaram",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1650,  
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],     
+        "images":[
+            {
+                "id":"kasavu-gold1",
+                "src":"../images/ProductImages/kasavudress1.jpg"
+            },
+            {
+                "id":"kasavu-gold2",
+                "src":"../images/ProductImages/kasavudress2.jpg"
+            },
+            {
+                "id":"kasavu-gold3",
+                "src":"../images/ProductImages/kasavudress31.jpg"
+            }
+        ],  
+        "featured":true,
+        "stock":2
+    },
+    {
+        "id": "petals01",
+        "name":"Petals Biege Dress",
+        "description": "Floral-embroidered Dobby Cotton Dress",
+        "collection":"Petals",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1450,
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],        
+        "images":[
+            {
+                "id":"petals-biege1",
+                "src":"../images/ProductImages/dobbyrose1.jpg"
+            },
+            {
+                "id":"petals-biege2",
+                "src":"../images/ProductImages/dobbyrose2.jpg"
+            },
+            {
+                "id":"petals-biege3",
+                "src":"../images/ProductImages/dobbyrose3.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":3
+    },
+    {
+        "id": "saaya01",
+        "name":"Saaya Blue Dress",
+        "description": "Designer Soft Cotton Dress with Headband",
+        "collection":"Saaya",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1050,
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],       
+        "images":[
+            {
+                "id":"saaya-blue1",
+                "src":"../images/ProductImages/cottonblue1.jpg"
+            },
+            {
+                "id":"saaya-blue2",
+                "src":"../images/ProductImages/cottonblue2.jpg"
+            },
+            {
+                "id":"saaya-blue3",
+                "src":"../images/ProductImages/cottonblue3.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":5
+    },
+    {
+        "id": "aayna02",
+        "name":"Aayna Peach Dress",
+        "description": "Mirror-Embroidered Handloom Cotton Dress",
+        "collection":"Aayna",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1100,
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],        
+        "images":[
+            {
+                "id":"aayna-peach1",
+                "src":"../images/ProductImages/mirrorpeach1.jpg"
+            },
+            {
+                "id":"aayna-peach2",
+                "src":"../images/ProductImages/mirrorpeach2.jpg"
+            },
+            {
+                "id":"aayna-peach3",
+                "src":"../images/ProductImages/mirrorpeach3.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":4
+    },
+    {
+        "id": "leher01",
+        "name":"Leher Pink Dress",
+        "description": "Tiered cotton Bandhni Dress with halter neck",
+        "collection":"Leher",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1200, 
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],      
+        "images":[
+            {
+                "id":"bandhni1",
+                "src":"../images/ProductImages/bandhni1.JPG"
+            },
+            {
+                "id":"bandhni2",
+                "src":"../images/ProductImages/bandhni2.JPG"
+            }            
+        ],  
+        "featured":true,
+        "stock":7
+    },
+    {
+        "id": "aayna03",
+        "name":"Aayna Green Kurti",
+        "description": "Mirror-Embroidered Handloom Cotton Kurti",
+        "collection":"Aayna",
+        "category": "Women",
+        "fabric":"Cotton",
+        "price": 1400,
+        "size":["S","M","L","XL","XXL"],        
+        "images":[
+            {
+                "id":"aayna-kurti1",
+                "src":"../images/ProductImages/kurtigreen1.jpg"
+            },
+            {
+                "id":"aayna-kurti2",
+                "src":"../images/ProductImages/kurtigreen2.jpg"
+            },
+            {
+                "id":"aayna-kurti3",
+                "src":"../images/ProductImages/kurtigreen3.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":4
+    },
+    {
+        "id": "Chethi01",
+        "name":"Embroidered Kasavu dress",
+        "description": "Cotton Kasavu dress with hand-embroidered red flowers",
+        "collection":"Chethi",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1200,
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],       
+        "images":[
+            {
+                "id":"kasavu-chethi1",
+                "src":"../images/ProductImages/onamflower1.jpg"
+            },
+            {
+                "id":"kasavu-chethi2",
+                "src":"../images/ProductImages/onamflower2.jpg"
+            },
+            {
+                "id":"kasavu-chethi3",
+                "src":"../images/ProductImages/onamflower3.jpg"
+            }
+        ],  
+        "featured":true,
+        "stock":2
+    },
+    {
+        "id": "mandaram02",
+        "name":"Mandaram Kasavu Skirt",
+        "description": "Cotton Gold polka dot skirt with pink brocade crop-top",
+        "collection":"Mandaram",
+        "category": "Kids",
+        "fabric":"Brocade",
+        "price": 1550, 
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],      
+        "images":[
+            {
+                "id":"onampink1",
+                "src":"../images/ProductImages/onampink1.jpg"
+            },
+            {
+                "id":"onampink2",
+                "src":"../images/ProductImages/onampink2.jpg"
+            },
+            {
+                "id":"onampink3",
+                "src":"../images/ProductImages/onampink3.jpg"
+            }
+        ],  
+        "featured":true,
+        "stock":2
+    },
+    {
+        "id": "Chethi02",
+        "name":"Silver Kasavu dress",
+        "description": "Embroidered Purple and Silver Handloom cotton Kasavu dress",
+        "collection":"Chethi",
+        "category": "Kids",
+        "fabric":"Cotton",
+        "price": 1100,
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],       
+        "images":[
+            {
+                "id":"purple-chethi1",
+                "src":"../images/ProductImages/purplekasavu1.jpg"
+            },
+            {
+                "id":"purple-chethi2",
+                "src":"../images/ProductImages/purplekasavu2.jpg"
+            },
+            {
+                "id":"purple-chethi3",
+                "src":"../images/ProductImages/purplekasavu3.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":2
+    },
+    {
+        "id": "mandaram03",
+        "name":"Mandaram Kasavu Skirt",
+        "description": "Cotton Silver kasavu skirt with Mint Green brocade crop-top",
+        "collection":"Mandaram",
+        "category": "Kids",
+        "fabric":"Brocade",
+        "price": 1550, 
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],      
+        "images":[
+            {
+                "id":"onamgreen1",
+                "src":"../images/ProductImages/onamgreen1.jpg"
+            },
+            {
+                "id":"onamgreen2",
+                "src":"../images/ProductImages/onamgreen2.jpg"
+            },
+            {
+                "id":"onamgreen3",
+                "src":"../images/ProductImages/onamgreen3.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":2
+    },
+    {
+        "id": "petals02",
+        "name":"Linen Embroidered Dress",
+        "description": "Off-white Linen Dress with hand-embroidered red roses",
+        "collection":"Petals",
+        "category": "Kids",
+        "fabric":"Linen",
+        "price": 1850, 
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],       
+        "images":[
+            {
+                "id":"linen-rose1",
+                "src":"../images/ProductImages/linenrose1.jpg"
+            },
+            {
+                "id":"linen-rose2",
+                "src":"../images/ProductImages/linenrose2.jpg"
+            },
+            {
+                "id":"linen-rose3",
+                "src":"../images/ProductImages/linenrose3.jpg"
+            }
+        ],  
+        "featured":true,
+        "stock":3
+    },
+    {
+        "id": "petals03",
+        "name":"Linen Hand-painted Dress",
+        "description": "Off-white Linen Dress with hand-painted baby elephant and embroidered flowers",
+        "collection":"Petals",
+        "category": "Kids",
+        "fabric":"Linen",
+        "price": 1800,
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],        
+        "images":[
+            {
+                "id":"linen-elephant1",
+                "src":"../images/ProductImages/elephant1.jpg"
+            },
+            {
+                "id":"linen-elephant2",
+                "src":"../images/ProductImages/elephant2.jpg"
+            },
+            {
+                "id":"linen-elephant3",
+                "src":"../images/ProductImages/elephant3.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":3
+    },
+    {
+        "id": "petals04",
+        "name":"Linen Embroidered Dress",
+        "description": "Baby Pink Linen Dress with  floral hand-embroidery",
+        "collection":"Petals",
+        "category": "Kids",
+        "fabric":"Linen",
+        "price": 1750,
+        "size":["0-3M","3-6M","6-12M","1-2Y","2-3Y","3-4Y","4-5Y","5-6Y","6-7Y","7-8Y"],        
+        "images":[
+            {
+                "id":"linen-pink1",
+                "src":"../images/ProductImages/linenpink1.jpg"
+            },
+            {
+                "id":"linen-pink1",
+                "src":"../images/ProductImages/linenpink1.jpg"
+            },
+            {
+                "id":"linen-pink1",
+                "src":"../images/ProductImages/linenpink1.jpg"
+            }
+        ],  
+        "featured":false,
+        "stock":3
+    }
+]
+}
