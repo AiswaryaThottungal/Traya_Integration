@@ -7,14 +7,17 @@ import Contact from "./Contact";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Cart from "./Cart";
+import Checkout from "./Checkout";
 import SingleProduct from "./SingleProduct";
 import Profile from "./Profile";
+import Order from "./Order";
 import ErrorPage from "./ErrorPage";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Toaster } from "react-hot-toast";
+
+
 
 const App = () => {
   const theme = {
@@ -62,6 +65,8 @@ const App = () => {
           <Route path="/signup" element={<SignUp/>} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/order" element={<Order />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<ErrorPage />} />       
         </Routes>

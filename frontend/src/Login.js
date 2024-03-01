@@ -3,17 +3,23 @@ import styled from 'styled-components';
 import { Button } from './styles/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import {toast, Toaster} from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
 import { useAuth } from './context/AuthContext';
+import { useCartContext } from "./context/CartContext";
+import Cookies from 'universal-cookie';
 
 const Login = () => {
     const LOGIN_URL = 'http://localhost:5000/api/user/login';
-    const { authUser,
-        setAuthUser,
-        isLoggedIn,
-        setIsLoggedIn} = useAuth();
+     const { authUser,
+         setAuthUser,
+         isLoggedIn,
+         setIsLoggedIn,
+         
+     } = useAuth();
 
-    const [formData, setFormData] = useState({        
+   // const { loginState, setLoginState } = useAuth();
+    const { getUserCart } = useCartContext();
+    const [formData, setFormData] = useState({
         email: '',
         password: ''
     })
@@ -23,43 +29,61 @@ const Login = () => {
     const navigate = useNavigate();
 
     axios.defaults.withCredentials = true;
-    const handleSubmit = async(e) => {
-        e.preventDefault();       
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         let validationErrors = {};
-        if(formData.email === '' || formData.email === null){            
+        if (formData.email === '' || formData.email === null) {
             validationErrors.email = "Email Required";
-        }else if(!/\S+@\S+\.\S+/.test(formData.email)){            
-            validationErrors.email = "Email is not Valid";  
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            validationErrors.email = "Email is not Valid";
         }
-        if(formData.password === '' || formData.password === null){            
+        if (formData.password === '' || formData.password === null) {
             validationErrors.password = "Password Required";
-        }else if(formData.password.length<8){            
-            validationErrors.password = "Password should contian atlease 8 characters";  
+        } else if (formData.password.length < 8) {
+            validationErrors.password = "Password should containn atleast 8 characters";
         }
         setErrors(validationErrors);
-        
-        if(Object.keys(validationErrors).length === 0 ){
-            try{
-                const response = await axios.post(LOGIN_URL, formData);   
 
-               console.log(response.data)
-               document.getElementById("login-form").reset();
-               toast.success("User Logged In");
-               setIsLoggedIn(true);
-               setAuthUser(formData.email);
-               navigate('/');
+        if (Object.keys(validationErrors).length === 0) {
+            try {
+                const response = await axios.post(LOGIN_URL, formData);
+                //localStorage.setItem("access", response.data.token); 
+                //document.getElementById("login-form").reset();
+                const userData = await response.data;
+                console.log(userData)
+                console.log(userData._id)
+                toast.success("User Logged In");
+                const newUser = {
+                    userId: userData._id,
+                    firstName: userData.firstname,
+                    lastName: userData.firstname,
+                    email: userData.email,
+                    address:  userData.address,
+                    wishlist:  userData.wishlist
+                }
+                setAuthUser(newUser);
+               
+                setIsLoggedIn(true);  
+                 
+            
+            
+                let cart = await getUserCart();
+                console.log("Get User Cart")
+                console.log(cart);
+                //localStorage.setItem("localCart", JSON.stringify(cart[0])); 
+                navigate('/');
             }
-            catch(error){
-                console.log(error.response.data)
-                toast.error(error.response.data.message)
+            catch (error) {
+                console.log(error?.response?.data?.message)
+                toast.error(error?.response?.data?.message)
             }
-          
+
         }
 
 
     }
     function handleChange(e) {
-        setFormData({...formData, [e.target.name] : e.target.value})
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
     return (
         <>
@@ -72,10 +96,10 @@ const Login = () => {
 
                         <div className='input-container'>
 
-                        <input className='input' label='Email Id' name='email' placeholder='Enter email-id' type='email' value={formData.email} onChange={handleChange} ></input>
-                    {errors.email && <p style={{color:"red"}}>{errors.email}</p>}
-                    <input className='input' label='Password' name='password' placeholder='Enter Password' type='password' value={formData.password} onChange={handleChange}></input>
-                    {errors.password && <p style={{color:"red"}}>{errors.password}</p>}
+                            <input className='input' label='Email Id' name='email' placeholder='Enter email-id' type='email' value={formData.email} onChange={handleChange} ></input>
+                            {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+                            <input className='input' label='Password' name='password' placeholder='Enter Password' type='password' value={formData.password} onChange={handleChange}></input>
+                            {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
                         </div>
                         <Button type='submit'> Submit</Button>
 
@@ -86,13 +110,13 @@ const Login = () => {
                             <button className='link-button'>Signup</button>
                         </Link>
                     </div>
-                    <Toaster  position="top-center" toastOptions={{
-                style: {
-                    border: '1px solid black',
-                    fontSize: '20px',
-                    padding: '16px'
-                }
-            }}/>
+                    <Toaster position="top-center" toastOptions={{
+                        style: {
+                            border: '1px solid black',
+                            fontSize: '20px',
+                            padding: '16px'
+                        }
+                    }} />
                 </div>
             </LoginWrapper>
 

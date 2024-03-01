@@ -9,7 +9,7 @@ import { useCartContext } from "../context/CartContext";
 const AddToCart = ({product}) => {
   const { addToCart } = useCartContext();
 
-  const { _id, sizeAvailable, stock } = product;
+  const { _id, sizeAvailable } = product;
   
   const [currentSize, setCurrentSize] = useState(sizeAvailable[0]);  
   
@@ -53,7 +53,8 @@ const AddToCart = ({product}) => {
           </select>
           
         </p>
-      </div>
+      </div><br/>
+      <div><p className='stock-info'>Available: {currentSize.quantity}</p></div>
         {/* add to cart  */}
       <CartQuantityToggle
         quantity={quantity}
@@ -61,7 +62,7 @@ const AddToCart = ({product}) => {
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart" onClick={() => addToCart(_id,currentSize,quantity,product)}>
+      <NavLink to="/cart" onClick={() => addToCart(currentSize,quantity,product)}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>
@@ -98,7 +99,10 @@ const Wrapper = styled.section`
     font-size: 1rem;
     color: #fff;
   }
-
+ .stock-info{
+  font-size:1.2rem;
+  color:gray;
+ }
   
 `;
 

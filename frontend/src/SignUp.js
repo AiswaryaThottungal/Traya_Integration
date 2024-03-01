@@ -36,7 +36,7 @@ const SignUp = () => {
         if(formData.password === '' || formData.password === null){            
             validationErrors.password = "Password Required";
         }else if(formData.password.length<8){            
-            validationErrors.password = "Password should contian atlease 8 characters";  
+            validationErrors.password = "Password should contain atlease 8 characters";  
         }
         if(formData.cPassword !== formData.password){            
             validationErrors.cPassword = "Confirm password must be same as the password entered";

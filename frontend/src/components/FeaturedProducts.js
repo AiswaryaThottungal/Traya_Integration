@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
 }
 const Wrapper = styled.section`
   padding: 9rem 0;
-  background-color: ${({ theme }) => theme.colors.bg};
+  background-color: ${({ theme }) => theme.colors.white};
 
   .container {
     max-width: 120rem;

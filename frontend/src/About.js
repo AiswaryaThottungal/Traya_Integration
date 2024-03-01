@@ -5,7 +5,8 @@ import styled from 'styled-components';
 const AboutWrapper = styled.div`
     color:'rgb(40, 35, 35)';
     text-align :'center';
-    padding: 2rem;
+    padding: 4rem 10rem;
+    padding-bottom:20rem;
     align-items: center;
     justify-content: center;
     h3{

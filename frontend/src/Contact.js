@@ -13,7 +13,7 @@ const ItemStyles= styled.div`
     margin-bottom: 2rem;
 `;
 const ContactStyles = styled.div`
-      
+      padding:4rem;
       display:flex;  
       flex-direction:column ;
       justify-content: center;
@@ -34,7 +34,7 @@ const ContactStyles = styled.div`
       }
   `;
   const ContactSection = styled.div`
-      background-color: aliceblue;
+      background-color:  ${({ theme }) => theme.colors.white}; 
       width: 40rem;
       text-align: center;
       justify-self: center;
@@ -45,6 +45,7 @@ const ContactStyles = styled.div`
     border-style: none;
     padding: 2rem;
     background-color: ${({ theme }) => theme.colors.secondary}; 
+    color: ${({ theme }) => theme.colors.white}; 
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -55,7 +56,7 @@ const ContactItem = styled.div`
     
     border-style: none;
     padding: 2rem;
-    background-color: ${({ theme }) => theme.colors.subtle}; 
+    background-color: aliceblue; 
     display: flex;
     align-items: center;
     gap: 2rem;

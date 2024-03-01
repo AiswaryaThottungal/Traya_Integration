@@ -7,11 +7,13 @@ import { NavLink } from 'react-router-dom';
 import FormatPrice from './helpers/FormatPrice';
 
 const Cart = () => {
-  const {cart, clearCart,total_price} = useCartContext();
+  const { cart, clearCart, total_amount } = useCartContext();
+  //const totalPrice = cart.cartTotal;
   console.log("🚀 ~ file: Cart.js:6 ~ Cart ~ cart:", cart);
+  console.log(total_amount)
   debugger;
-  if(cart.length === 0){
-    return(
+  if (cart.length === 0) {
+    return (
       <EmptyDiv>
         <h3>Your Cart Is Empty!</h3>
       </EmptyDiv>
@@ -25,37 +27,65 @@ const Cart = () => {
           <p className='cart-hide'>Price</p>
           <p>Quantity</p>
           <p className='cart-hide'> Total Price</p>
-          <p>Remove</p>          
+          <p>Remove</p>
         </div>
-        <hr/>
+        <hr />
         <div className='cart-item'>
           {
-            cart.map((currentItem) =>{
+            cart.map((currentItem) => {
               debugger;
-              return <CartItem key={currentItem.id} {...currentItem}/>
+              return <CartItem key={currentItem.id} {...currentItem} />
             })
           }
         </div>
-        <hr/>
-        <div className='cart-buttons'>
-          <NavLink to='/Products'>
-            <Button>Continue Shopping</Button>
-          </NavLink>
-          <Button onClick={clearCart}>Clear Cart</Button>         
+        <hr />
+        <div className='cart-actions-total'>
+          <div className='actions-link'>
+            <div className='clear-or-continue'>
+            <NavLink to='/Products'>
+              <p>Continue Shopping</p>
+            </NavLink>
+            <p> | </p>
+            <p onClick={clearCart}>Clear Cart</p>
+            </div>     
+                      
+                     
+          </div>
+          
+
+          <div className='order-total--amount'>
+            <div className='order-total--subdata'>
+              <div>
+                <p>Order Total: </p>
+                <p> <FormatPrice price={total_amount} /> </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
         </div>
+        <hr />
 
         {/* order total_amount */}
-        <div className='order-total--amount'>
+        {/* <div className='order-total--amount'>
           <div className='order-total--subdata'>
             <div>
               <p>Order Total: </p>
-              <p> <FormatPrice price={total_price}/> </p>
+              <p> <FormatPrice price={total_amount}/> </p>
             </div>
             
           </div>
 
+        </div> */}
+        <div className='cart-buttons'>
+        <NavLink to='/checkout'>
+          <Button>Check Out</Button>
+          </NavLink>
         </div>
         
+
       </div>
     </Wrapper>
   )
@@ -149,10 +179,20 @@ const Wrapper = styled.section`
     }
   }
 
-  .cart-buttons {
+  .cart-actions-total{
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+
+    .btn-clear {
+      background-color: #e74c3c;
+    }
+  }
+  .cart-buttons {
+    margin-top: 2rem;    
+    display: flex;
+    justify-content : flex-end;
+    
 
     .btn-clear {
       background-color: #e74c3c;
@@ -184,21 +224,43 @@ const Wrapper = styled.section`
     cursor: pointer;
   }
 
+  .actions-link{
+    
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .clear-or-continue{  
+     
+      display: flex;
+      flex-direction: row;
+      gap: 1.8rem;
+
+     p{      
+      cursor:pointer;
+      font-size: 1.8rem;
+     color: ${({ theme }) => theme.colors.secondary};
+     }
+    
+  }
   .order-total--amount {
-    width: 100%;
-    margin: 4.8rem 0;
+    
+    margin-left : 25rem;
     text-transform: capitalize;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
 
     .order-total--subdata {
-      border: 0.1rem solid #f0f0f0;
+      margin-top : 0;
+      
       display: flex;
       flex-direction: column;
       gap: 1.8rem;
-      padding: 3.2rem;
+     
     }
     div {
       display: flex;

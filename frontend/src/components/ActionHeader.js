@@ -6,37 +6,46 @@ import { useCartContext } from "../context/CartContext";
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import {toast, Toaster} from 'react-hot-toast';
+import Cookies from 'universal-cookie';
 
 
 const ActionHeader = () => {
     const [dashboard, setDashboard] = useState(false);  
-  const {total_item} =useCartContext();
-
+  const {total_item, addCartToDB, clearCart} =useCartContext();
+  const userAPI = "http://localhost:5000/api/user/";
+  const cookies= new Cookies();
   const { authUser,
     setAuthUser,
     isLoggedIn,
     setIsLoggedIn} = useAuth();
 
-/* const handleLogin = (e) =>{
-    e.preventDefault();
-    setIsLoggedIn(true);
-    setAuthUser({
-        Name: "Aiswarya"
-    })
-} */
+
+ const navigate = useNavigate();
+
 
 const handleLogout= async() =>{
     
     try{
-        const response = await axios.get("http://localhost:5000/api/user/logout");   
+        let response = await axios.delete(userAPI + "clear-cart",
+            {
+                headers:{
+                    "Authorization" : `Bearer ${cookies.get('accessToken')}`
+                }
+            })
+        response= await addCartToDB();
+        console.log(response)
+        clearCart();
+        response = await axios.get(userAPI + "logout");   
 
         console.log(response.data)        
         toast.success("User Logged Out");
         setIsLoggedIn(false);
         setAuthUser(null);
+        navigate('/login');
+        
     }catch(error){
-        console.log(error.response.data)
-        toast.error(error.response.data.message)
+        console.log(error)
+        toast.error(error)
     }
     
 }
@@ -45,7 +54,7 @@ const handleLogout= async() =>{
         <ActionNav>
             
             <div className="offer-info">
-            <h3 className="shipping-offer">FREE shipping all over India!</h3>
+            <h3 className="shipping-offer">This website is under maintenance. Orders are not accepted</h3>
             </div>
 
             <div className="action-bar">

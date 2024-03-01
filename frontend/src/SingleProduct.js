@@ -22,9 +22,11 @@ const SingleProduct = () => {
     price,
     images,    
     featured,
-    stock,
+    sizeAvailable,
+    stock
    } = singleProduct;   
     console.log("🚀 ~ file: SingleProduct.js:25 ~ SingleProduct ~ images:", images)
+    console.log(singleProduct)
   debugger;
 
   useEffect(() => {
@@ -68,20 +70,18 @@ const SingleProduct = () => {
               </div>            
               
             </div>
-            <hr />
+           
 
-            <div className="product-data-info">
+         {/*    <div className="product-data-info">
               <p>
                 Available:
                 <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
               </p>
-            {/*   <p>
-                Product ID : <span className="product-details"> {_id} </span>
-              </p> */}
-              {/* <p>
+              
+              <p>
                 Collection :<span> {collection} </span>
-              </p> */}
-            </div>
+              </p>
+            </div> */}
             <hr />
             {stock > 0 && <AddToCart product={singleProduct} />}            
           </div>

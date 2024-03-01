@@ -60,7 +60,7 @@ function Carousel({images})  {
             display: flex;
             flex-direction: row;
             padding: 40px 30px;
-            background-color:${({ theme }) => theme.colors.bg};
+            background-color:${({ theme }) => theme.colors.white};
             align-items: center;
         }
 
@@ -72,8 +72,10 @@ function Carousel({images})  {
             padding-left: 10rem;
         }
         .card-title{
-            color: #031926;
+            color: ${({ theme }) => theme.colors.secondary};
             font-size: x-large;
+            margin-bottom:2rem;
+            
         }
         .image-section{
             position: relative;

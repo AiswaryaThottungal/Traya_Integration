@@ -15,7 +15,7 @@ const authRouter = require("./routes/authRoute");
 const MONGODB_URL = "mongodb+srv://traya_admin:PXrhfye5yM5XEtOa@traya.8gjndyi.mongodb.net/Traya?retryWrites=true&w=majority";
 
 app.use(cors({
-    origin: ["http://localhost:3001"],
+    origin: ["http://localhost:3000"],
     credentials:true
 }));
 
@@ -41,7 +41,7 @@ app.use(errorHandler);
 
 const start = async() => {
     try{
-        await connectDB(MONGODB_URL);
+        const connection =await connectDB(MONGODB_URL);
         app.listen(PORT, () => {  
            console.log( `${PORT} connected`);
         })

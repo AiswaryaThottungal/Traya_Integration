@@ -15,10 +15,12 @@ const Nav = () => {
   console.log("total item"+ total_item)
 
   const Nav = styled.nav`
+    
     .navbar-lists {
       display: flex;
       gap: 4.8rem;
       align-items: center;
+      
       list-style-type:none;
 
       .navbar-link {
@@ -121,7 +123,7 @@ const Nav = () => {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: #fff;
+        background-color: ${({ theme }) => theme.colors.white};
         list-style-type:none;
 
         display: flex;
@@ -183,6 +185,14 @@ const Nav = () => {
               onClick={() => setDrawer(false)}>
               Home
             </NavLink>
+          </li>          
+          <li>
+            <NavLink
+              to="/products"
+              className="navbar-link "
+              onClick={() => setDrawer(false)}>
+              Products
+            </NavLink>
           </li>
           <li>
             <NavLink
@@ -190,14 +200,6 @@ const Nav = () => {
               className="navbar-link "
               onClick={() => setDrawer(false)}>
               About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/products"
-              className="navbar-link "
-              onClick={() => setDrawer(false)}>
-              Products
             </NavLink>
           </li>
           <li>
